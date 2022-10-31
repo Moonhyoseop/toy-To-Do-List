@@ -26,7 +26,6 @@ function getTime(){
 setInterval(getTime,1000);
 
 // + 버튼 클릭
-
 var data = [];
 
 addBtn.addEventListener('click', function(){
@@ -74,3 +73,4 @@ addBtn.addEventListener('click', function(){
         reBtn.style.display = 'none';
     })
 })
+// 리스트 목록
