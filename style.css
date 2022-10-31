@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    width: 50%;
+    margin: 0 auto;
+}
+.container{
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    background-color: skyblue;
+}
+.container h1{
+    text-align: center;
+    padding: 10px;
+}
+
+h1{
+    color:white;
+    border-width: bold;
+    font-size: 50px;
+}
+
+#clock{
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color:white;
+    font-size: 18px;
+}
+
+.inputBox{
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+
+#inputBox{
+    width: 80%;
+    height: 55px;
+    border: none;
+    font-size: 30px;
+    border-radius: 5px;
+    margin-right: 20px;
+    outline: none;
+    vertical-align: middle; 
+}
+
+#inputBox:focus{
+    outline: 3px solid lightgray;
+}
+
+#addBtn{
+    width: 80px;
+    height: 55px;
+    font-size: 20px;
+    border-radius: 5px;
+    vertical-align: middle;
+    border: none;
+    transition : all 0.2s linear;
+}
+
+#addBtn:hover{
+    transform: scale(1.5);
+    border-left-color: lightgray;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+#toDolist{
+    width: 870px;
+    margin-left: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 5px;
+    padding-bottom: 60px;
+    
+}
+
+#toDolist li{
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid lightgray;
+    margin: 10px 50px;
+}
+
+#toDolist button{
+    width: 70px;
+}
+
+a{
+    float: right;
+    text-align: right;
+    color: red;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
