@@ -61,13 +61,13 @@ addBtn.addEventListener('click', function(){
     console.log(data)
     })
 
-// 리스트 한번 클릭
+// 리스트 한번 클릭 중앙 선 긋기 
     list.addEventListener('click', function(){
         list.style.textDecoration = "line-through";
         list.style.textDecorationColor = 'red';
     })
 
-// 리스트 더블 클릭
+// 리스트 더블 클릭 해당 리스트 삭제
     list.addEventListener('dblclick', function(){
         data.forEach((element, i) => {
             data = data.splice(i,1)
