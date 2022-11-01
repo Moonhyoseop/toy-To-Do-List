@@ -1,22 +1,22 @@
-let inputBox = document.getElementById('inputBox')
-let addBtn = document.getElementById('addBtn')
-let toDolist = document.getElementById('toDolist')
-let clear = document.getElementById('clear')
-let clock = document.getElementById('clock')
+const inputBox = document.getElementById('inputBox')
+const addBtn = document.getElementById('addBtn')
+const toDolist = document.getElementById('toDolist')
+const clear = document.getElementById('clear')
+const clock = document.getElementById('clock')
 
 
 // 현재 날짜 구하기
 function getTime(){
-    let today = new Date();
-    let year = today.getFullYear();
-    let month = today.getMonth() + 1;
-    let date = today.getDate();
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const date = today.getDate();
     const week = ['일','월','화','수','목','금','토']
-    let day = week[today.getDay()];
+    const day = week[today.getDay()];
 
-    let hours = today.getHours();
-    let minutes = today.getMinutes();
-    let seconds = today.getSeconds(); 
+    const hours = today.getHours();
+    const minutes = today.getMinutes();
+    const seconds = today.getSeconds(); 
     
     showTime = `${year}-${month}-${date}-${day}요일 
     ${hours}시 ${minutes}분 ${seconds}초`;
@@ -26,39 +26,39 @@ function getTime(){
 setInterval(getTime,1000);
 
 // + 버튼 클릭
-var data = [];
+let data = [];
 
 addBtn.addEventListener('click', function(){
-    let list = document.createElement('li');
+    const list = document.createElement('li');
     
     data.push(inputBox.value)
-    let obj = {...data}
-    
-    console.log(obj)
 
     if(!inputBox.value){
+        data.pop();
         alert('내용을 입력해주세요')
     }else{
         list.innerText = inputBox.value;
         toDolist.appendChild(list);
         inputBox.value="";
 
-        var reBtn = document.createElement('button')
-        reBtn.innerText = '수정'
-        toDolist.appendChild(reBtn);
+        var modifyBtn = document.createElement('button')
+        modifyBtn.innerText = '수정'
+        toDolist.appendChild(modifyBtn);
     }
-    reBtn.addEventListener('click', function(){
-       let list = document.createElement('input')
-       
+
+    console.log(data)
+    
+ // 수정 버튼 클릭   
+    modifyBtn.addEventListener('click', function(){
+   
     })
 
 // 모두 삭제 버튼 클릭
     clear.addEventListener('click',function(){
-    
-        list.style.display = 'none';
-        reBtn.style.display = 'none';
-        data = [];
-        console.log(data)
+    list.style.display = 'none';
+    modifyBtn.style.display = 'none';
+    data = [];
+    console.log(data)
     })
 
 // 리스트 한번 클릭
@@ -69,8 +69,18 @@ addBtn.addEventListener('click', function(){
 
 // 리스트 더블 클릭
     list.addEventListener('dblclick', function(){
+        data.forEach((element, i) => {
+            data = data.splice(i,1)
+            console.log(data)
+        })
+          
+        
+        
         list.style.display = 'none';
-        reBtn.style.display = 'none';
+        modifyBtn.style.display = 'none';
+
     })
 })
+
+    
 // 리스트 목록
